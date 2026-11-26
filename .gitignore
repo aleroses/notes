@@ -118,3 +118,7 @@ software/**/*.back.*
 software/**/psd
 software/**/thumb
 software/**/sketch
+
+# Obsidian: plugins y temas de terceros
+.obsidian/plugins/
+.obsidian/themes/
