@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --first-bg-color: #090b10;
+  --second-bg-color: #0f111a;
+  --first-text-color: #15f5ba;
+  --second-text-color: #b6eada;
+  --third-text-color: #cbd5e1;
+  --fourth-text-color: #fff;
+  --test-color: #eb1d36;
+
+  --alternative-bg-color: #000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* max-height: 500px; */
+  margin: 0;
+
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: larger;
+  color: var(--first-text-color);
+  background-color: var(--first-bg-color);
+}
+
+.card.nightMode {
+  /*  height: 100vh;
+  max-height: 600px; */
+  color: var(--first-text-color);
+  /*background-color: var(--first-bg-color);*/
+
+  background: linear-gradient(
+    180deg,
+    var(--alternative-bg-color),
+    var(--first-bg-color)
+  );
+}
+
+.flashcard {
+  width: 80vw;
+  max-width: 300px;
+  height: 200px;
+  background-color: var(--second-bg-color);
+  box-shadow: 0 5px 10px -5px var(--first-text-color);
+  border-radius: 14px;
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.front .question {
+  color: var(--first-text-color);
+  animation: blink 5s ease-in-out infinite;
+}
+
+.line {
+  display: flex;
+  margin: 0 auto;
+  width: 86%;
+  height: 1px;
+  border: none;
+  background-color: var(--first-text-color);
+  opacity: 0.1;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer {
+  color: var(--second-text-color);
+}
+
+/* Buttons */
+
+.back-sounds {
+  display: flex;
+  justify-content: center;
+}
+
+.replay-button svg circle {
+  fill: none;
+  stroke: none;
+}
+
+.replay-button svg path {
+  fill: var(--second-bg-color);
+  stroke: var(--first-text-color);
+}
+
+/* Animations */
+@keyframes blink {
+  0%,
+  100% {
+    color: var(--second-text-color);
+  }
+
+  50% {
+    color: var(--first-text-color);
+  }
+}
+
+/* Estilos solo para pantallas grandes (mayor a 1024px) */
+@media screen and (min-width: 900px) {
+  .card,
+  .card.nightMode {
+    height: 100vh;
+    max-height: 440px;
+    /* height: 100vh;
+    max-height: 600px; */
+  }
+
+  .flashcard {
+    /* width: 80vw;
+    max-width: 300px; */
+    height: 250px;
+  }
+
+  audio {
+    /* width: 100%; */
+    /* border-radius: 10px; */
+    border: none;
+    /* border: 1px solid var(--first-bg-color); */
+    outline: none;
+    box-shadow: none;
+    background: none;
+    /* filter: drop-shadow(0 0 10px cyan); */
+    /* background-color: var(--first-bg-color); */
+  }
+
+  /* Personalización de los controles (solo navegadores WebKit como Anki) */
+  audio::-webkit-media-controls-panel {
+    border: 1px solid var(--second-bg-color);
+    outline: none;
+    box-shadow: none;
+    background: none;
+    background-color: var(--second-bg-color);
+
+    /* border-radius: 10px; */
+  }
+
+  audio::-webkit-media-controls-play-button {
+    filter: invert(1);
+  }
+
+  audio::-webkit-media-controls-timeline {
+    filter: invert(1);
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    filter: invert(1);
+  }
+}

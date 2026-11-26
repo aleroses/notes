@@ -1,0 +1,126 @@
+<div class="flashcard front-flashcard">
+  <main class="main glass">
+    <section class="main__word">
+      <h2 class="word">{{Word}}</h2>
+      <h3 class="ipa">{{IPA}}</h3>
+    </section>
+
+    <div class="word-sound">{{Sound}}</div>
+  </main>
+
+  <section class="carousel glass">
+    <!-- <button class="carousel-btn prev">&#10094;</button> -->
+
+    <div class="carousel-window">
+      <div class="carousel-track">
+        <!-- Slide 1 -->
+        <article class="slide">
+          <h4>Meaning</h4>
+
+          <div class="reveal blurred">
+            {{Meaning/Translation}}
+          </div>
+        </article>
+
+        {{#SimilarWords}}
+
+        <!-- Slide 2 -->
+        <article class="slide">
+          <h4>Similar Word</h4>
+
+          <div class="similar-content">
+            <p class="similar-word">{{SimilarWords}}</p>
+
+            <p class="similar-meaning">
+              {{SimilarMeaning}}
+            </p>
+          </div>
+        </article>
+
+        {{/SimilarWords}}
+      </div>
+    </div>
+
+    <!-- <button class="carousel-btn next">&#10095;</button> -->
+  </section>
+
+  <div class="carousel-dots"></div>
+
+  <script>
+    const unorderedList = document.querySelector('ul');
+    const items = document.querySelectorAll('li');
+
+    // if (
+    //   items.length > 6 &&
+    //   items.length < 18 &&
+    //   items.length !== 12
+    // ) {
+    //   unorderedList.style.justifyContent = 'start';
+    // }
+
+    if (items.length < 6) {
+      unorderedList.style.justifyContent = 'center';
+    }
+
+    // Testing
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector(
+      '.carousel-dots'
+    );
+
+    const slideCount = slides.length;
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dotsContainer
+        .querySelectorAll('.carousel-dot')
+        .forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+    }
+
+    if (slideCount > 1) {
+      slides.forEach((slide, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot';
+
+        if (i === 0) dot.classList.add('active');
+
+        dot.addEventListener('click', () => {
+          index = i;
+          update();
+        });
+
+        dotsContainer.appendChild(dot);
+      });
+    } else {
+      dotsContainer.style.display = 'none';
+    }
+
+    update();
+
+    document.addEventListener('click', (e) => {
+      const reveal = e.target.closest('.reveal');
+      if (!reveal) return;
+      reveal.classList.toggle('blurred');
+    });
+
+    // no va?
+
+    // slides.forEach((_, i) => {
+    //   const dot = document.createElement('span');
+
+    //   dot.className = 'carousel-dot';
+
+    //   dot.onclick = () => {
+    //     index = i;
+
+    //     update();
+    //   };
+
+    //   dotsContainer.appendChild(dot);
+    // });
+  </script>
+</div>

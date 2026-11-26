@@ -1,0 +1,464 @@
+/* 
+Card Variables 
+	You can change the values of these color and font-size variables to customize your experience.
+*/
+
+:root {
+  /* Increase this max-width-card value to increase the maximum width of your card! */
+  --max-width-card: 400px;
+
+  /* Increase the font-size to make the card easier to read! If you want to make the text bigger and easier to see, we suggest that you also increase the max-width of the card so you have more space. The card's max-width variable is the first variable, above this comment. */
+  --font-size-card: 18px;
+  --font-size-targetWord: 26px;
+  --font-size-header: 16px;
+
+  /* Change the color values of these variables to change the colors in your cards! NightMode colors are only active when you are running anki in Night Mode (dark mode). */
+  --color-text-primary: #18191f;
+  --color-nightMode-text-primary: #fbfafe;
+  --color-audio-button: #d92243;
+
+  --color-hint: #6b7280;
+  --color-nightMode-hint: #9ca3af;
+  --color-sentence-translation: #6b7280;
+  --color-nightMode-sentence-translation: #9ca3af;
+  --color-header: #9ca3af;
+  --color-nightMode-header: rgba(255, 255, 255, 0.5);
+  --color-divider: #e5e7eb;
+  --color-nightMode-divider: #1f2937;
+
+  /* ==================================================
+   GLASSMORPHISM
+   ================================================== */
+
+  --glass-bg: rgba(0, 0, 0, 0.1);
+  /* --glass-border: rgba(255, 255, 255, 0.35); */
+  /* --glass-border: rgba(255, 255, 255, 0.35); */
+  --glass-border: rgba(34, 34, 217, 0.35);
+  --glass-shadow: rgba(0, 0, 0, 0.15);
+
+  --glass-blur: 12px;
+  --glass-saturate: 180%;
+
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+
+  /* ==================================================
+   GLASSMORPHISM Night Mode
+   ================================================== */
+
+  --glass-night-bg: rgba(0, 0, 0, 0.1);
+  --glass-night-border: rgba(246, 157, 57, 0.25);
+  --glass-night-shadow: rgba(0, 0, 0, 0.45);
+  --glass-night-highlight: rgba(99, 102, 241, 0.08);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ol,
+ul {
+  list-style: none;
+} */
+
+/* blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+} */
+
+/* Refold Specific Styles */
+
+/* Anki 2.1.49 sets box-sizing to content-box  */
+
+/* Copyright: Ankitects Pty Ltd and contributors
+ * License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html */
+
+/* body.nightMode::-webkit-scrollbar {
+  background: #2f2f31;
+}
+
+body.nightMode::-webkit-scrollbar:horizontal {
+  height: 12px;
+}
+
+body.nightMode::-webkit-scrollbar:vertical {
+  width: 12px;
+}
+
+body.nightMode::-webkit-scrollbar-thumb {
+  background: #656565;
+  border-radius: 8px;
+}
+
+body.nightMode::-webkit-scrollbar-thumb:horizontal {
+  min-width: 50px;
+}
+
+body.nightMode::-webkit-scrollbar-thumb:vertical {
+  min-height: 50px;
+}
+
+body {
+  overscroll-behavior: none;
+} */
+
+/* night-mode-specific colours */
+/* Copyright: Ankitects Pty Ltd and contributors
+ * License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html */
+
+/* body {
+  margin: 0 !important;
+  overflow-wrap: break-word;
+} */
+
+/* ==================================================
+    3. REUSABLE COMPONENTS
+    ================================================== */
+
+/* Glassmorphism */
+
+.glass {
+  background: rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  border-radius: 16px;
+}
+
+/* =====================================================
+   ANKI DEFAULT STYLES
+===================================================== */
+
+/* #_flag {
+  position: fixed;
+  right: 10px;
+  top: 0;
+  font-size: 30px;
+  display: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#_mark {
+  position: fixed;
+  left: 10px;
+  top: 0;
+  font-size: 30px;
+  color: yellow;
+  display: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#typeans {
+  width: 100%;
+  box-sizing: border-box;
+} */
+
+.typeGood {
+  background: #0f0;
+}
+
+.typeBad {
+  background: #f00;
+}
+
+.typeMissed {
+  background: #ccc;
+}
+
+/* .nightMode .latex {
+  filter: invert(100%);
+}
+
+.drawing {
+  zoom: 50%;
+}
+
+.nightMode img.drawing {
+  filter: invert(1) hue-rotate(180deg);
+} */
+
+/* CZ1K STYLES */
+
+.card {
+  /* rebecca_afterlife.jpeg */
+  padding: 16px;
+
+  background-image:
+    linear-gradient(
+      rgba(9, 11, 16, 0.75),
+      rgba(9, 11, 16, 0.75)
+    ),
+    url('n_18.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+
+  /* New */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* outline: 2px solid red; */
+}
+
+.customCard {
+  width: 86vw;
+
+  max-width: var(--max-width-card);
+  min-height: 200px;
+
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* flex-shrink: 0; */
+  flex: 0 0 var(--max-width-card);
+  /* align-items: center; */
+
+  /* margin: 0 auto; */
+  /* padding-top: 24px;
+  padding-bottom: 8px; */
+  padding: 24px 16px 8px 16px;
+  /* padding-top: 24px;
+  padding-bottom: 8px; */
+  /* padding: 0 16px 0 16px; */
+
+  /* Glass */
+  /* background: var(--glass-bg); */
+  border: 1px solid var(--glass-border);
+
+  /* backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
+
+  -webkit-backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
+
+  box-shadow: 0 8px 32px var(--glass-shadow); */
+
+  /* border-radius: 16px; */
+  /* Glass */
+
+  font-weight: 500;
+  font-size: var(--font-size-card);
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-primary);
+
+  /* New */
+  transform: translateY(-6vh);
+
+  /* outline: 2px solid lime; */
+}
+
+.nightMode .customCard {
+  /* background-color: var(--color-nightMode-card-background); */
+  color: var(--color-nightMode-text-primary);
+
+  /* Glass */
+  /* color: var(--color-nightMode-text-primary); */
+
+  /* background: var(--glass-night-bg);
+  border-color: var(--glass-night-border); */
+
+  /* box-shadow: 0 8px 32px var(--glass-night-shadow); */
+}
+
+.cardFront {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  /* font-style: italic; */
+}
+
+.hint {
+  color: var(--color-hint);
+  /* color: var(--color-sentence-translation); */
+  font-weight: 400;
+  font-style: italic;
+  padding-right: 15px;
+  padding-top: 6px;
+
+  /* background-color: #0f0; */
+}
+
+.nightMode .hint {
+  color: var(--color-nightMode-hint);
+}
+
+.targetWord {
+  font-size: var(--font-size-targetWord);
+  font-weight: 600;
+}
+
+/* Back */
+
+.cardBack {
+  /* flex-direction: column; */
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+
+  /* padding-top: 24px;
+  padding-bottom: 8px; */
+}
+
+.sentenceContainer {
+  /* width: 100%; */
+  /* padding-left: 16px;
+  padding-right: 16px; */
+  /* padding: 0 16px 0 16px; */
+}
+
+.header {
+  color: var(--color-header);
+  font-size: var(--font-size-header);
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.nightMode .header {
+  color: var(--color-nightMode-header);
+}
+
+.sentenceSection {
+  padding-left: 12px;
+}
+
+.sentenceTranslation {
+  color: var(--color-sentence-translation);
+  font-weight: 400;
+  font-style: italic;
+  padding-right: 15px;
+  padding-top: 6px;
+
+  /* background-color: #0f0; */
+}
+
+.nightMode .sentenceTranslation {
+  color: var(--color-nightMode-sentence-translation);
+}
+
+/* Image */
+
+.sentenceImage {
+  width: 100%;
+  height: 210px;
+  margin-top: 16px;
+
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+
+  opacity: 0.7;
+}
+
+.sentenceImage img {
+  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Anki Classes */
+
+.audioControls {
+  display: flex;
+  justify-content: center;
+  /* background-color: #0f0; */
+
+  margin-top: 16px;
+}
+
+.replay-button {
+  padding: 8px;
+}
+.replay-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+.replay-button svg path {
+  fill: var(--color-audio-button);
+}
+.replay-button svg circle {
+  fill: none;
+  stroke: none;
+}
+
+.reportIconContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dividerLine {
+  width: 100%;
+  border-bottom: 1px solid var(--color-divider);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.nightMode .dividerLine {
+  border-color: var(--color-nightMode-divider);
+}
+
+/* .sentenceContent {
+  display: flex;
+  align-items: center;
+} */
+
+@font-face {
+  font-family: Inter;
+  src: url('_Inter-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: Inter;
+  src: url('_Inter-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: Inter;
+  src: url('_Inter-SemiBold.ttf');
+  font-weight: 600;
+}
+
+/* @font-face {
+  font-family: 'Inter';
+  src: url('_Inter-Italic.ttf');
+  font-style: italic;
+  font-weight: 400;
+} */

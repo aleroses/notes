@@ -1,0 +1,241 @@
+<section class="media-card">
+  <figure class="media-card__figure">
+    {{#video}}
+    <div class="media-card__video-container">
+      <canvas class="media-card__canvas"></canvas>
+      <video
+        class="media-card__video"
+        src="{{video}}"
+        width="100%"
+        preload="metadata"
+        playsinline
+      ></video>
+    </div>
+    {{/video}}
+  </figure>
+  <!-- FIN Contenedor Media -->
+
+  <div class="media-card__controls">
+    <button
+      class="media-card__play-button"
+      aria-label="Reproducir/Pausar"
+    >
+      <svg
+        class="icon icon--play"
+        viewBox="0 0 24 24"
+        width="70%"
+        height="70%"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M8 6 L19 12 L8 18 Z" />
+      </svg>
+      <svg
+        class="icon icon--pause"
+        viewBox="0 0 24 24"
+        width="70%"
+        height="70%"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <rect
+          x="6"
+          y="5"
+          width="4"
+          height="14"
+          rx="2"
+          ry="2"
+        ></rect>
+        <rect
+          x="14"
+          y="5"
+          width="4"
+          height="14"
+          rx="2"
+          ry="2"
+        ></rect>
+      </svg>
+    </button>
+  </div>
+
+  <footer class="card__footer">
+    <span>{{season}}</span>
+    <span>{{episode_title}}</span>
+  </footer>
+
+  <script>
+    function initializeAmbientMode(videoElement) {
+      const canvas = document.querySelector(
+        '.media-card__canvas'
+      );
+      const ctx = canvas.getContext('2d');
+
+      if (!videoElement || !canvas) return;
+
+      canvas.width = 16;
+      canvas.height = 9;
+
+      let animationFrameId;
+
+      function drawGlow() {
+        if (videoElement.paused || videoElement.ended) {
+          ctx.drawImage(
+            videoElement,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          );
+          cancelAnimationFrame(animationFrameId);
+          return;
+        }
+
+        ctx.drawImage(
+          videoElement,
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+        animationFrameId = requestAnimationFrame(drawGlow);
+      }
+
+      videoElement.addEventListener('play', () => {
+        canvas.classList.add('media-card__canvas--active');
+        cancelAnimationFrame(animationFrameId);
+        drawGlow();
+      });
+    }
+
+    function togglePlayPauseVideo(event) {
+      var currentVideo = document.querySelector(
+        '.media-card__video'
+      );
+
+      if (!currentVideo) return;
+      if (event) {
+        event.stopPropagation();
+      }
+      if (currentVideo.paused || currentVideo.ended) {
+        currentVideo.muted = false;
+        if (currentVideo.readyState === 0) {
+          currentVideo.load();
+        }
+        currentVideo.play().catch((e) => {});
+      } else {
+        currentVideo.pause();
+      }
+    }
+
+    function updateVideoBottomButtonState() {
+      var currentVideo = document.querySelector(
+        '.media-card__video'
+      );
+      var buttons = document.querySelectorAll(
+        '.media-card__play-button'
+      );
+
+      if (!currentVideo || !buttons.length) return;
+
+      const isPaused =
+        currentVideo.paused || currentVideo.ended;
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle(
+          'media-card__play-button--playing',
+          !isPaused
+        );
+        btn.setAttribute(
+          'aria-label',
+          isPaused ? 'Reproducir' : 'Pausar'
+        );
+      });
+    }
+
+    function setupVideoPlayer() {
+      var outsideButton = document.querySelector(
+        '.media-card__play-button'
+      );
+      if (outsideButton) {
+        outsideButton.addEventListener(
+          'click',
+          togglePlayPauseVideo
+        );
+      }
+
+      var videoElement = document.querySelector(
+        '.media-card__video'
+      );
+
+      if (videoElement) {
+        var videoContainer = videoElement.closest(
+          '.media-card__video-container'
+        );
+
+        if (videoContainer) {
+          videoContainer.addEventListener(
+            'click',
+            togglePlayPauseVideo
+          );
+        }
+
+        initializeAmbientMode(videoElement);
+        videoElement.classList.remove(
+          'media-card__video--ready'
+        );
+
+        const makeVideoVisible = () => {
+          videoElement.classList.add(
+            'media-card__video--ready'
+          );
+          videoElement.removeEventListener(
+            'loadeddata',
+            makeVideoVisible
+          );
+        };
+
+        if (videoElement.readyState >= 2) {
+          makeVideoVisible();
+        } else {
+          videoElement.addEventListener(
+            'loadeddata',
+            makeVideoVisible
+          );
+        }
+
+        videoElement.addEventListener(
+          'play',
+          updateVideoBottomButtonState
+        );
+        videoElement.addEventListener(
+          'pause',
+          updateVideoBottomButtonState
+        );
+        videoElement.addEventListener(
+          'ended',
+          updateVideoBottomButtonState
+        );
+        updateVideoBottomButtonState();
+        videoElement.muted = false;
+
+        var playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {});
+        }
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener(
+        'DOMContentLoaded',
+        setupVideoPlayer
+      );
+    } else {
+      setupVideoPlayer();
+    }
+  </script>
+</section>

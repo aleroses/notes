@@ -1,0 +1,88 @@
+<div class="flashcard back-flashcard">
+  <!-- <h1 id="rubric">
+    4000 <br />
+    Essential English <br />
+    Words
+  </h1> -->
+  <!-- <figure class="figure">{{Image}}</figure> -->
+  <header class="header glass">
+    {{Image}}
+    <div class="header_word">
+      <h3 class="word">{{Word}}</h3>
+      <div class="wd">{{Sound}}</div>
+    </div>
+  </header>
+
+  <main class="main glass">
+    <section class="main__meaning accordion">
+      <input
+        type="radio"
+        name="accordion"
+        id="btn-accordion1"
+        class="btn-accordion"
+      />
+      <label class="meaning" for="btn-accordion1">
+        {{Meaning}}
+      </label>
+      <!-- <p class="meaning">Meaning: {{Meaning}}</p> -->
+      <div class="accordion-content">
+        <p class="meaning__translation">
+          {{Meaning_translation}}
+        </p>
+      </div>
+    </section>
+    <section class="main__example accordion">
+      <input
+        type="radio"
+        name="accordion"
+        id="btn-accordion2"
+        class="btn-accordion"
+      />
+      <label class="example" for="btn-accordion2">
+        E.g. {{Example}}
+      </label>
+      <!-- <p class="example">&nbsp;→&nbsp;Example: {{Example}}</p> -->
+      <div class="accordion-content">
+        <p class="example__translation">
+          {{Example_translation}}
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>{{Sound_Meaning}}</div>
+    <div class="stop">[sound:_1sec.mp3]</div>
+    <div>{{Sound_Example}}</div>
+  </footer>
+
+  <script>
+    // const card = document.querySelector('.card');
+    // card.classList = 'back-card';
+
+    // card.style.padding = "0px 2px";
+    // card.style.margin = "0";
+  </script>
+</div>
+
+<!-- Extra -->
+<!-- {{FrontSide}} -->
+
+<div class="flashcard">
+  <h1 id="rubric">{{Deck}}</h1>
+
+  <section class="back-flex">
+    {{IMG}} {{type:English}}
+
+    <hr />
+
+    <h3 class="ipa">{{Transcription}}</h3>
+
+    <div class="sound">{{Audio}}</div>
+  </section>
+
+  <script>
+    document.getElementById('rubric').innerHTML =
+      '{{Deck}}'.replace('::', '::');
+  </script>
+</div>
