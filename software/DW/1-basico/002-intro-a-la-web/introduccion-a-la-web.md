@@ -7,56 +7,57 @@
 
 ## 2. ¿Cómo empezó todo?
 
-Los problemas que se intentaban resolver con las máquinas y computadoras era el Cálculo.
-⠀
-El Ábaco es considerado como la primera computadora. El uso del Ábaco consiste en conteos decimales.
-⠀
-Aparecieron las máquinas mecánicas no eléctricas que ayudaban a hacer cálculos con mayor complejidad.
-⠀
-Luego aparecieron las computadoras humanas, consistía en que las personas eran las encargadas de cálculos manualmente.
-⠀
-En los años 40, aparecieron las máquinas que se podían programar, estuvieron muy presentes durante la guerra, pero existía el problema de la falta de almacenamiento de datos, así que aparecieron las tarjetas perforadas que tenían como principal función el de guardar información.
-⠀
-Posteriormente nació el Maquine Code (Lenguaje de Máquina), para realizar los cálculos utilizando el sistema binario. Esto presentaba un gran nivel de dificultad así que nacieron los lenguajes de programación.
-⠀
-Entre los primeros lenguajes se encontraban Fortran, Cobol, Basic, C, Pascal y C++.
-⠀
-Maquine Code es considerado como un lenguaje de bajo nivel.
+Los problemas que se intentaban resolver con las máquinas y computadoras eran de **cálculo**.
 
+### Primeras herramientas de cálculo
 
-- https://es.wikipedia.org/wiki/Historia_de_los_lenguajes_de_programaci%C3%B3n
-- https://platzi.com/cursos/historia-programacion/
+- El **ábaco** es considerado la primera computadora. Su uso consiste en conteos decimales.
+- Después aparecieron las **máquinas mecánicas no eléctricas**, que ayudaban a hacer cálculos de mayor complejidad.
+- Luego aparecieron las **computadoras humanas**: personas encargadas de realizar los cálculos manualmente.
 
+### Máquinas programables
+
+- En los años 40 aparecieron las **máquinas que se podían programar**. Estuvieron muy presentes durante la guerra, pero existía el problema de la falta de almacenamiento de datos.
+- Para resolverlo aparecieron las **tarjetas perforadas**, cuya función principal era guardar información.
+
+### Machine Code y lenguajes de programación
+
+- Posteriormente, nació el **Machine Code** (lenguaje de máquina), que realiza los cálculos utilizando el sistema binario.
+- Esto presentaba un gran nivel de dificultad, así que nacieron los **lenguajes de programación**.
+- Entre los primeros lenguajes se encontraban Fortran, Cobol, Basic, C, Pascal y C++.
+- El Machine Code es considerado un **lenguaje de bajo nivel**.
+
+### Enlaces
+
+- [Historia de los lenguajes de programación](https://es.wikipedia.org/wiki/Historia_de_los_lenguajes_de_programaci%C3%B3n)
+- [Historia programación](https://platzi.com/cursos/historia-programacion/)
 
 ## 3. Inputs y outputs
 
-La interacción que tenemos con las computadoras son las entradas y salidas.
-⠀
+La interacción que tenemos con las computadoras se da a través de **entradas y salidas**.
 
-Entrada(input) → Proceso → Salida(output)
-⠀
-- La entrada o input son la información que ingresamos a la computadora, esto puede ser a través de dispositivos de entrada como: Escáner, Micrófono, Webcam, Mouse, Teclado, etc.
-- El Proceso consiste en los cálculos que hará la computadora tomando como base la información ingresada.
-- La salida u output son la información que devuelve la computadora y esta información puede ser visualizada a través de dispositivos de salida como: Impresora, Proyector, Parlante, Monitor, etc.
-⠀
+**Entrada (input) → Proceso → Salida (output)**
+
+- **Entrada o input:** es la información que ingresamos a la computadora. Se puede ingresar a través de dispositivos de entrada como escáner, micrófono, webcam, mouse, teclado, etc.
+- **Proceso:** son los cálculos que realiza la computadora tomando como base la información ingresada.
+- **Salida u output:** es la información que devuelve la computadora. Se puede visualizar a través de dispositivos de salida como impresora, proyector, parlante, monitor, etc.
+
 Todo lo que la computadora hace son cálculos de alto nivel.
-
 
 ## 4. Binario
 
-Machine Code es un lenguaje binario. El sistema binario es básicamente un sistema de conteo.
+**Machine Code** es un lenguaje binario. El sistema binario es básicamente un sistema de conteo, y la computadora solo entiende ceros y unos.
 
-La computadora solo entiende en ceros y unos.
+### Método 1: De decimal a binario con las potencias de 2
 
-Ejemplo: 
-
-Número 70 a binario
-
-Para convertir un número decimal a binario, utilizamos como referencia las potencias de 2: 
+Para convertir un número decimal a binario, utilizamos como referencia las potencias de 2:
 
 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
 |-----|----|----|----|---|---|---|---|
 
+Primero escribimos los valores desde `128` hasta `1`. Luego comenzamos desde el número más grande y vamos comprobando si podemos restarlo al número que tenemos: si cabe, colocamos `1` y seguimos con el resto; si no, colocamos `0`.
+
+#### Ejemplo 1: número 70 a binario
 
 Comenzamos desde el número más grande y vamos comprobando si podemos restarlo al número que tenemos:
 ⠀
@@ -77,22 +78,25 @@ Comenzamos desde el número más grande y vamos comprobando si podemos restarlo 
 - **1 → 0**  
 	1 > 0, el dígito es `0`. 
 
+Los valores son:
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|----|----|----|---|---|---|---|
+|  0  |  1 |  0 |  0 | 0 | 1 | 1 | 0 |
+
 Por lo tanto: 
 
 ```
 70 (decimal) → 01000110 (binario) 
 ```
 
-Comprobación:
+**Comprobación:** sumamos solamente los valores que tienen un `1`:
 
 ```
 64 + 4 + 2 = 70
 ```
 
-
-Ejemplo: 
-
-Número 151 a binario
+#### Ejemplo 2: número 151 a binario
 
 Nuevamente, utilizamos las potencias de 2 como referencia:
 
@@ -117,125 +121,88 @@ Comenzamos desde el número más grande:
 	2 < 3, el dígito es `1` y utilizamos el resto: `3 - 2 = 1` 
 - **1 → 1**  
 	1 = 1, el dígito es `1`. 
-	
+
 Por lo tanto: 
 
 ```
 151 (decimal) → 10010111 (binario)
 ```
 
+### 🔥 Potencias de 2
 
-
-### Método 1: De binario a decimal
-
-> Tenemos el 70, primero debemos escribir del 128 al 1 y luego ir rellenando espacios con 1 o 0 comenzando por el 128 (70 es muy pequeño para entrar aquí), pasamos al siguiente (64 es menor para mi 70, coloco un 1 y me sobran 6), el 32 es demasiado para mi 6 así que coloco un 0, continuamos hasta llegar al número deseado total, colocando 0s donde no vaya nada.
-
-Tenemos el número **70**. Primero debemos escribir los valores desde `128` hasta `1` y luego ir rellenando los espacios con `1` o `0`, comenzando por `128`. 
-
-> Tenemos el 70. Primero debemos escribir del 128 al 1 y luego ir rellenando espacios con 1 o 0 comenzando por el 128.  
-> 70 es muy pequeño para entrar aquí, por lo que colocamos un `0`. Pasamos al siguiente: 64 es menor que 70, colocamos un `1` y nos sobran 6.  
-> El 32 es demasiado para nuestro 6, así que colocamos un `0`. Continuamos hasta llegar al número deseado, colocando `0` donde no corresponda utilizar el valor. 
-
-Los valores son: 
-
-| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 | 
-|-----|----|----|----|---|---|---|---| 
-|  0  |  1 |  0 | 0  | 0 | 1 | 1 | 0 | 
-
-Por lo tanto:
+Desde `1`, las cifras se van duplicando:
 
 ```
-0 1 0 0 0 1 1 0
-```
-
-Para comprobar el resultado, **sumamos solamente los valores que tienen un `1`**:
-
-```
-64 + 4 + 2 = 70
-```
-
-Por lo tanto: 
-
-```
-01000110 (binario) = 70 (decimal) 
-```
-
-🔥 Potencias de 2
-
-Desde `1`, las cifras se van duplicando: 
-
-```
-1 → 2 → 4 → 8 → 16 → 32 → 64 → 128 → 256 → 512 → ... 
+1 → 2 → 4 → 8 → 16 → 32 → 64 → 128 → 256 → 512 → ...
 ```
 
 Puedes colocar tantos valores como sean necesarios según la conversión que quieras realizar.
 
 ### Método 2: De decimal a binario mediante divisiones entre 2
 
-Otra forma de convertir **70 decimal a binario** es dividir sucesivamente entre `2`.
-
-Debemos dividir entre 2 hasta llegar a un cociente de `1`. Después, escribimos los resultados **desde el último cociente hacia arriba**, tomando también los restos.
+Otra forma de convertir **70 decimal a binario** es dividir sucesivamente entre `2` hasta llegar a un cociente de `1`. Después, escribimos el último cociente y los restos, leyendo **de abajo hacia arriba**.
 
 ```
-70 ÷ 2 = 35 → resto 0 
+70 ÷ 2 = 35 → resto 0
 35 ÷ 2 = 17 → resto 1
-17 ÷ 2 = 8  → resto 1 
- 8 ÷ 2 = 4  → resto 0 
+17 ÷ 2 = 8  → resto 1
+ 8 ÷ 2 = 4  → resto 0
  4 ÷ 2 = 2  → resto 0
- 2 ÷ 2 = 1  → resto 0 
+ 2 ÷ 2 = 1  → resto 0
 ```
 
-El último cociente es `1`. 
-
-Ahora leemos desde el último cociente hacia arriba: 
+El último cociente es `1`. Ahora leemos desde el último cociente hacia arriba:
 
 ```
-1 0 0 0 1 1 0 
-``` 
+1 0 0 0 1 1 0
+```
 
-Por lo tanto: 
+Por lo tanto:
 
 ```
-70 (decimal) → 1000110 (binario) 
-``` 
+70 (decimal) → 1000110 (binario)
+```
 
-Si queremos representarlo utilizando **8 bits**, agregamos un `0` al inicio: ```text 70 (decimal) → 01000110 (binario) ```
+Si queremos representarlo utilizando **8 bits**, agregamos un `0` al inicio:
+
+```text
+70 (decimal) → 01000110 (binario)
+```
 
 ## 5. Bits y bytes
 
-La computadora entiende todo en base a un sistema binario compuesto por bits y bytes.
-⠀
-- Bit = Cada dígito del sistema binario.
-- Byte = La combinación de 8 bits.
-⠀
-Transistores: La forma en que la computadora entiende los unos y ceros.
+La computadora entiende todo en base a un sistema binario compuesto por **bits** y **bytes**.
 
-Funciona con 2 estados: 
+- **Bit:** cada dígito del sistema binario.
+- **Byte:** la combinación de 8 bits.
 
-- ON-OFF; 
-- True-False;
-- 0-1
+### Transistores
 
+- Son la forma en que la computadora entiende los unos y ceros.
+- Funcionan con dos estados:
+  - ON - OFF
+  - True - False
+  - 0 - 1
 
 ## 6. ASCII
 
-[ASCII Code](https://www.ascii-code.com/)
+Referencia: [ASCII Code](https://www.ascii-code.com/)
 
 **ASCII** (*American Standard Code for Information Interchange*) es un sistema en el que se asigna un **valor numérico** a una letra, número o carácter especial. 
 
-Se le asigna un valor numérico para que posteriormente la computadora pueda representarlo en **binario** y así interpretar de qué letra, número o carácter se trata. 
+Se le asigna un valor numérico para que posteriormente la computadora pueda representarlo en **binario** y así interpretar de qué letra, número o carácter se trata.
 
 ### Tabla ASCII: Letras mayúsculas
 
 | Carácter | Decimal | Carácter | Decimal | Carácter | Decimal | Carácter | Decimal |
-|:---:|---:|:---:|---:|:---:|---:|:---:|---:|
-| A | 65 | B | 66 | C | 67 | D | 68 |
-| E | 69 | F | 70 | G | 71 | H | 72 |
-| I | 73 | J | 74 | K | 75 | L | 76 |
-| M | 77 | N | 78 | O | 79 | P | 80 |
-| Q | 81 | R | 82 | S | 83 | T | 84 |
-| U | 85 | V | 86 | W | 87 | X | 88 |
-| Y | 89 | Z | 90 | | | | |
+|-----------|--------|----------|---------|----------|---------|----------|---------|
+| A        | 65      | B        | 66      | C        | 67      | D        | 68      |
+| E        | 69      | F        | 70      | G        | 71      | H        | 72      |
+| I        | 73      | J        | 74      | K        | 75      | L        | 76      |
+| M        | 77      | N        | 78      | O        | 79      | P        | 80      |
+| Q        | 81      | R        | 82      | S        | 83      | T        | 84      |
+| U        | 85      | V        | 86      | W        | 87      | X        | 88      |
+| Y        | 89      | Z        | 90      |          |         |          |         |
 
 Por ejemplo:
 
@@ -257,14 +224,14 @@ Supongamos que recibimos los siguientes valores decimales:
 
 Podemos buscar cada valor en la tabla ASCII para obtener el carácter correspondiente:
 
-|DEC|BINARIO   |SÍMBOLO|
-|--:|:--------:|:-----:|
-|161|`10100001`|¡|
-|72 |`01001000`|H|
-|111|`01101111`|o|
-|108|`01101100`|l|
-|97 |`01100001`|a|
-|33 |`00100001`|!|
+|Decimal |Binario    |Carácter|
+|--------|-----------|--------|
+|161     |`10100001`|¡      |
+|72      |`01001000`|H      |
+|111     |`01101111`|o      |
+|108     |`01101100`|l      |
+|97      |`01100001`|a      |
+|33      |`00100001`|!      |
 
 Por lo tanto:
 
@@ -318,13 +285,7 @@ Y según ASCII:
 
 ### ¿Qué sucede cuando escribimos un texto?
 
-Cuando escribimos:
-
-```
-¡Hola!
-```
-
-podemos entender el proceso de la siguiente manera:
+Cuando escribimos `¡Hola!`, podemos entender el proceso de la siguiente manera:
 
 ```
 Texto
@@ -356,13 +317,7 @@ En ASCII tradicional, cada carácter ocupa **1 byte**, es decir:
 1 byte = 8 bits
 ```
 
-Por lo tanto, el texto:
-
-```text
-¡Hola!
-```
-
-tiene **6 caracteres**.
+Por lo tanto, el texto `¡Hola!` tiene **6 caracteres**.
 
 Si cada carácter ocupa 1 byte:
 
@@ -384,7 +339,6 @@ Por lo tanto:
 
 > **Nota:** ASCII estándar utiliza 7 bits para representar 128 caracteres (valores 0–127), aunque normalmente los caracteres ASCII se almacenan en unidades de 1 byte (8 bits).  
 > El valor `161` de `¡` no pertenece al ASCII estándar; corresponde a una extensión de ASCII, como **ISO-8859-1 / Windows-1252**, dependiendo de la codificación utilizada.
-
 
 ## 7. UNICODE
 
