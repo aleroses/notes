@@ -64,6 +64,22 @@ gh stack push
 
 Opcionalmente, gh stack sync combina traer cambios remotos, hacer el rebase en cascada y subir las ramas en un solo comando.
 
+## Ramas de trabajo
+
+```mermaid
+gitGraph
+    commit id: "init"
+    branch feat-db
+    checkout feat-db
+    commit id: "PR #1: Esquema BD"
+    branch feat-api
+    checkout feat-api
+    commit id: "PR #2: Endpoints API"
+    branch feat-ui
+    checkout feat-ui
+    commit id: "PR #3: Vista Frontend"
+```
+
 ## ¿Qué pasa si ya tienes ramas creadas previamente con `git branch`?
 
 Si alguna vez empezaste a trabajar de forma tradicional creando ramas con `git checkout -b` antes de usar `gh stack`, no tienes que borrarlas: te sitúas en cada rama existente y usas `gh stack track` en lugar de `init` o `add` para indicarle a `gh stack` cual es la rama padre de cada una.
