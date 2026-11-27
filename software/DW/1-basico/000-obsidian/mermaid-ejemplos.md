@@ -1,4 +1,4 @@
-# Titulo
+# Mermaid Ejemplos
 
 - [Diagramas como código con Mermaid](https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/)
 - [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
@@ -115,6 +115,20 @@ graph TB
     style JavaScript fill:#5C469C, stroke:#5C469C
     style TypeScript fill:#AD7BE9, stroke:#AD7BE9
     style React fill:#F266AB, stroke: #F266AB
+```
+
+```mermaid
+gitGraph
+    commit id: "init"
+    branch feat-db
+    checkout feat-db
+    commit id: "PR #1: Esquema BD"
+    branch feat-api
+    checkout feat-api
+    commit id: "PR #2: Endpoints API"
+    branch feat-ui
+    checkout feat-ui
+    commit id: "PR #3: Vista Frontend"
 ```
 
 ## Technologies
