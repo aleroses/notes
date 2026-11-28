@@ -4,5 +4,6 @@
   "showInlineTitle": false,
   "defaultViewMode": "preview",
   "livePreview": false,
-  "vimMode": true
+  "vimMode": true,
+  "alwaysUpdateLinks": true
 }
