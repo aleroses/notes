@@ -340,322 +340,452 @@ Por lo tanto:
 > **Nota:** ASCII estándar utiliza 7 bits para representar 128 caracteres (valores 0–127), aunque normalmente los caracteres ASCII se almacenan en unidades de 1 byte (8 bits).  
 > El valor `161` de `¡` no pertenece al ASCII estándar; corresponde a una extensión de ASCII, como **ISO-8859-1 / Windows-1252**, dependiendo de la codificación utilizada.
 
-## 7. UNICODE
+## 7. Unicode
 
-https://unicode-table.com/en/#basic-latin
+Referencia: [Unicode Table](https://unicode-table.com/en/#basic-latin)
 
-Pese a que fue muy innovador ASCII solo se enfocaba en el alfabeto común y dejaba de lado ciertos alfabetos o caracteres especiales.
-Aquí es donde surge UNICODE, en este se encuentran todos los caracteres especiales incluidos los emojis y distintos alfabetos, UNICODE cuenta con mas de 1 millón de caracteres en su lista
+Aunque ASCII fue muy innovador, solo se enfocaba en el alfabeto común y dejaba de lado otros alfabetos y caracteres especiales.
 
+Ahí es donde surge **Unicode**: incluye todos los caracteres especiales, los emojis y distintos alfabetos. Su lista cuenta con más de 1 millón de caracteres.
 
 ## 8. RGB
 
-RGB
+**RGB** es un formato de colores. Cada píxel dentro de una imagen está compuesto por 3 subpíxeles: rojo (**R**ed), verde (**G**reen) y azul (**B**lue), con un tono de 0 a 255.
 
-Es un formato de colores.
-Cada pixel dentro de una imagen está compuesta por 3 sub pixeles: Rojo (Red), Verde (Green) y Azul (Blue) con un tono de 0 a 255.
-⠀
-Ejemplos:
+### Ejemplos de colores básicos
 
-- Negro (0, 0, 0)
-- Blanco (255, 255, 255)
-- Rojo (255, 0, 0)
-⠀
+- Negro: (0, 0, 0)
+- Blanco: (255, 255, 255)
+- Rojo: (255, 0, 0)
+
+### Combinando tonalidades
+
 Combinando tonalidades se pueden formar colores específicos.
-⠀
-Ejemplos:
-- Plum Purple (178, 80, 228)
-R: 178 = 10110010
-G: 80  = 01010000
-B: 228⠀= 11100100
 
-Cada pixel representa un cálculo de la computadora.
+Ejemplo: **Plum Purple (178, 80, 228)**
 
+- R: 178 = `10110010`
+- G: 80 = `01010000`
+- B: 228 = `11100100`
 
-En resumen: la computadora solo interpreta números binarios, ella siempre realiza la siguiente transformación:
+Cada píxel representa un cálculo de la computadora.
 
-- Números => Binario
-- Letras => Números (según ASCII) => binario
-- Caracteres especiales => número (Según Unicode) => Binario
-- Imagen => Número (RGB) =>Binario
-- Música => Números (según las ondas) => Binario.
+### Resumen: todo es binario
 
-Es decir que todo lo que realizamos en la computadora consiste en números binarios.
+La computadora solo interpreta números binarios. Siempre realiza la siguiente transformación:
 
+- Números → binario
+- Letras → números (según ASCII) → binario
+- Caracteres especiales → número (según Unicode) → binario
+- Imagen → números (RGB) → binario
+- Música → números (según las ondas) → binario
+
+Es decir, todo lo que realizamos en la computadora consiste en números binarios.
 
 ## 9. ¿De dónde viene el internet?
 
-El internet viene directamente de los cables que nosotros tenemos en la casa y ciudad que hacen posible que tengamos internet.
+El internet viene directamente de los cables que tenemos en la casa y en la ciudad, y que hacen posible que tengamos conexión.
 
-La mayoría de estos cables se encuentran en el mar porque van directamente de una parte del mundo a otra.
+La mayoría de estos cables se encuentran en el mar, porque van directamente de una parte del mundo a otra.
 
-Internet es una abreviación de Internetworking y se creó en los años 70s para referirse a los cables físicos y las computadoras que se conectan entre sí.
+Referencia: [Submarine Cable Map](https://www.submarinecablemap.com/)
 
-El internet nace de un proyecto llamado ARPANET (Advanced Research Projects Agency NETwork) en los 70’s y es la forma de cómo podemos conectar ciertas universidades para conectarlas entre sí e intercambiar información.
+### Origen del nombre
 
+- **Internet** es una abreviación de **Internetworking**. Se creó en los años 70 para referirse a los cables físicos y a las computadoras que se conectan entre sí.
 
-https://www.submarinecablemap.com/
+### ARPANET
 
-
-
-El internet nace de una experimento del gobierno Estadounidense llamado ARPANET con el fin de descentralizar sus comunicaciones en medio de la guerra fría, comienzan conectando 4 computadoras de universidades vía fibra óptica y el experimento evoluciona hasta conectar a computadoras vía satélite con la evolución del experimento se establecen reglas y protocolos donde nace el arroba y HTTP
-
+- El internet nace de un proyecto llamado **ARPANET** (*Advanced Research Projects Agency NETwork*) en los años 70. Es la forma en que se conectaron ciertas universidades entre sí para intercambiar información.
+- Fue un experimento del gobierno estadounidense con el fin de **descentralizar sus comunicaciones** en medio de la guerra fría.
+- Comenzó conectando 4 computadoras de universidades vía fibra óptica. Después el experimento evolucionó hasta conectar computadoras vía satélite.
+- Con la evolución del experimento se establecieron reglas y protocolos, y de ahí nacieron el arroba (@) y **HTTP**.
 
 ## 10. Protocolos
 
-Protocolos
-TCP/IP Transmission Control Protocol / Internet Protocol
-Es un protocolo de transmisión, el cual se divide en 5 etapas:
+### TCP/IP
 
-Es la forma de como se genera la información y al momento de enviarla a través de internet llegue a su destino a través de encabezados, divide la información a través de paquetes y con internet cada uno de estos toma el camino mas rápido para llegar a una dirección.
- 
-Aplicación		HTTP/FTP
-Transporte		TCP, UDP
-Red			IP, ROUTERS
-Enlace de datos	ETHERNET, SWITCHES
-Físico		CABLES
+**TCP/IP** (*Transmission Control Protocol / Internet Protocol*) es un protocolo de transmisión que se divide en 5 etapas.
 
+Es la forma en que se genera la información y en que, al enviarla a través de internet, llega a su destino mediante encabezados. Divide la información en paquetes y, con internet, cada uno de ellos toma el camino más rápido para llegar a una dirección.
+
+### Capas
+
+| Capa            | Protocolos / elementos |
+|-----------------|------------------------|
+| Aplicación      | HTTP, FTP              |
+| Transporte      | TCP, UDP               |
+| Red             | IP, routers            |
+| Enlace de datos | Ethernet, switches     |
+| Físico          | Cables                 |
 
 ## 11. ISP
 
-ISP (Internet Service Provider)
-Son los proveedores de Internet, son intermediarios con toda la infraestructura que nos da acceso a internet, otorgándonos una IP Address.
+**ISP** (*Internet Service Provider*) son los proveedores de internet. Son intermediarios con toda la infraestructura que nos da acceso a internet, y nos otorgan una **dirección IP** (IP Address).
 
+En resumen, el ISP es esa empresa a la que llamas bien enojado cuando el internet va lento, jaja. Es el que se encarga de conectarte y de mantener la infraestructura de la red.
 
-En resumen, el ISP esa cosa a la cual llamas bien enojado cuando te va lento el internet jaja, es el que se encargan de conectarte a ti y de mantener la infraestructura de la red.
-
-Y el IP es como que ese “numero telefónico” que tienes, y los DNS… bueno, en la siguiente clase:D!
-
+La IP es como ese "número telefónico" que tienes. Y los DNS… bueno, en la siguiente clase :D
 
 ## 12. DNS
 
-DNS (Domain Name System)
-Se crean para poder identificar a quien tenemos que contactar sin poner la dirección IP.
-Ejemplo: 172.217.7.23 es la IP de Google, en vez de escribir la dirección IP podemos ingresar a la dirección a través del dominio de Google
-⠀
-El DNS hace que sea mas fácil tener interacción con otro equipo.
+**DNS** (*Domain Name System*) se creó para poder identificar a quién tenemos que contactar sin escribir la dirección IP.
 
+Ejemplo: `172.217.7.23` es la IP de Google. En vez de escribir la dirección IP, podemos ingresar a la dirección a través del dominio de Google.
+
+El DNS hace que sea más fácil interactuar con otro equipo.
 
 ## 13. El primer desarrollador web
 
-El primer desarrollador Web
-⠀
 Utilizamos la Web para crear y compartir información.
-⠀
-Hubo un primer desarrollador Web, su nombre es Tim Berners-Lee.
-- Hizo la propuesta de W3, la cual es una forma de globalizar la información y poderla linkear.
-- Todo lo generó a través de una computadora NEXT.
-- Escribió las 3 tecnologías fundamentales para el desarrollo Web:
-	- HTML: Lenguaje de marcado para la Web.
-	- URL: Dirección a la que nos conectamos.
-	- HTTP: Forma para comunicarnos a través de peticiones
-- Construyó el primer servidor Web.
+
+Hubo un primer desarrollador web: **Tim Berners-Lee**.
+
+- Hizo la propuesta de **W3**, una forma de globalizar la información y poder enlazarla (*linkearla*).
+- Todo lo generó a través de una computadora **NeXT**.
+- Escribió las 3 tecnologías fundamentales para el desarrollo web:
+  - **HTML:** lenguaje de marcado para la Web.
+  - **URL:** dirección a la que nos conectamos.
+  - **HTTP:** forma de comunicarnos a través de peticiones.
+- Construyó el primer servidor web.
 - Construyó el primer navegador.
 
-
-http://info.cern.ch/hypertext/WWW/TheProject.html
+Referencia: [The WorldWideWeb project](http://info.cern.ch/hypertext/WWW/TheProject.html)
 
 ## 14. W3C
 
-W3C (World Wide Web Consortium)
-Trabajan los estándares, los cuales son las tecnologías que se trabajan en la Web. La W3C se encarga de realizar las mejoras en la Web, modificaciones, generar propuestas, etc.
-Existen muchas empresas que trabajan para mejorar la Web, junto a W3C
+**W3C** (*World Wide Web Consortium*) trabaja los estándares, que son las tecnologías que se utilizan en la Web. Se encarga de realizar mejoras y modificaciones en la Web, generar propuestas, etc.
 
-https://www.w3.org/Consortium/Member/List
+Existen muchas empresas que trabajan junto con el W3C para mejorar la Web.
 
+Referencia: [Lista de miembros del W3C](https://www.w3.org/Consortium/Member/List)
 
 ## 15. Web browser
 
 Han existido muchos navegadores, por ejemplo:
 
-MOSAIC: Implementó lo primeros gráficos en los navegadores, este navegador ya no existe.
-NetScape: Gracias a este navegador tenemos ahora JavaScript.
-Google Chrome: Mejoró las interacciones con las páginas e inició con el desarrollo de las aplicaciones Web.
-
+- **Mosaic:** implementó los primeros gráficos en los navegadores. Este navegador ya no existe.
+- **Netscape:** gracias a este navegador tenemos ahora JavaScript.
+- **Google Chrome:** mejoró las interacciones con las páginas e inició el desarrollo de las aplicaciones web.
 
 ## 16. Evolución del protocolo HTTP
 
-HTTP (Hypertext Transfer Protocol)
-HTTP son reglas de comunicación.
-Para este protocolo existen HTTP Request y HTTP Response, los cuales se encarga del procesamiento de las solicitudes.
-⠀
-Existen métodos dentro de HTTP:
-- GET: Solicita datos (platzi.com)
-- POST: Envía datos (login).
-- PUT: Crea o reemplaza datos (modificar).
-- DELETE: Borra datos específicos.
-⠀
-HTTPS (Hypertext Transfer Protocol Secure).- Es la parte de seguridad en la conexión, las peticiones van encriptadas.
+**HTTP** (*Hypertext Transfer Protocol*) son reglas de comunicación.
 
+Para este protocolo existen **HTTP Request** y **HTTP Response**, que se encargan del procesamiento de las solicitudes.
+
+### Métodos de HTTP
+
+- **GET:** solicita datos (por ejemplo, platzi.com).
+- **POST:** envía datos (por ejemplo, un login).
+- **PUT:** crea o reemplaza datos (modificar).
+- **DELETE:** borra datos específicos.
+
+### HTTPS
+
+**HTTPS** (*Hypertext Transfer Protocol Secure*) es la parte de seguridad en la conexión: las peticiones van encriptadas.
 
 ## 17. Estándares web
 
-Estándares Web
-Nacen a causa de la “Guerra de los Navegadores”, no existía una regla sobre a que dirección iba la Web, los navegadores implementaban sus propios estándares.
+Los **estándares web** nacen a causa de la "Guerra de los Navegadores": no existía una regla sobre hacia dónde iba la Web, y los navegadores implementaban sus propios estándares.
 
-Estándares:
-- HTML: Arquitectura de la información, texto, actualmente HTML5.
-- CSS: Manejo de estilos, colores, diseño.
-- JavaScript: Interactividad, aplicaciones Web.
-- WebAssembly: Es un estándar que nació en diciembre del 2019, es un compilador.
+### Estándares
 
+- **HTML:** arquitectura de la información y del texto. Actualmente se usa HTML5.
+- **CSS:** manejo de estilos, colores y diseño.
+- **JavaScript:** interactividad y aplicaciones web.
+- **WebAssembly:** es un estándar que nació en diciembre de 2019 y funciona como un compilador.
 
 ## 18. ¿Dónde estamos ahora?
 
-¿Dónde estamos ahora?
-Hay 4000 millones de dispositivos conectados a la Web, estos dispositivos no solo son computadoras, ahora cualquier equipo puede llegar a conectarse a la Web.
+Hay 4000 millones de dispositivos conectados a la Web. Estos dispositivos no son solo computadoras: ahora cualquier equipo puede llegar a conectarse a la Web.
 
-Actualmente existen patrones de diseño para la Web para diversos dispositivos, como buenas prácticas se debería empezar por el diseño mobile first.
+Actualmente existen patrones de diseño web para diversos dispositivos. Como buena práctica, se debería empezar por el diseño **mobile first**.
 
-Internet of Things (Internet de las cosas).- Son objetos inteligentes conectados a internet, ej. un refrigerador, automóvil, etc.
+### Tecnologías actuales
 
-Machine Learning y Artificial Intelligence (Aprendizaje Automático e Inteligencia Artificial).- Son tecnologías que están creciendo actualmente y ambas están siendo aplicadas en muchos proyectos.
-
-5G.- Gracias a esta tecnología incrementaremos el número de dispositivos conectados.
-
+- **Internet of Things (Internet de las cosas):** son objetos inteligentes conectados a internet, por ejemplo, un refrigerador o un automóvil.
+- **Machine Learning y Artificial Intelligence (aprendizaje automático e inteligencia artificial):** son tecnologías que están creciendo actualmente, y ambas se están aplicando en muchos proyectos.
+- **5G:** gracias a esta tecnología aumentará el número de dispositivos conectados.
 
 ## 19. DOM
 
-DOM (Document Object Model)
-DOM es un árbol que se genera con la información de las etiquetas HTML.
-Proporciona una representación estructural del documento, permitiendo la modificación de su contenido o su presentación visual.
-Con JS ya podremos generar interactividad a través del DOM.
+**DOM** (*Document Object Model*) es un árbol que se genera con la información de las etiquetas HTML.
 
+Proporciona una representación estructural del documento y permite modificar su contenido o su presentación visual. Con JavaScript podemos generar interactividad a través del DOM.
+
+### Ejemplo de árbol DOM
+
+```text
 Document
-html
-	head
-		style
-		attribute: type
-	
-	body
-		din
-		attribute: id
-
+└── html
+    ├── head
+    │   └── style
+    │       └── attribute: type
+    └── body
+        └── div
+            └── attribute: id
+```
 
 ## 20. CSSOM
 
-CSSOM (CSS Object Model)
-CSSOM genera algo similar al DOM, genera un árbol con los estilos.
-Permite leer y modificar el estilo de CSS de forma dinámica.
+**CSSOM** (*CSS Object Model*) es una estructura similar al DOM, pero en lugar de representar el contenido del HTML, representa los **estilos**: genera un árbol con la información de CSS.
 
+Permite leer y modificar los estilos de CSS de forma dinámica, es decir, mientras la página ya está cargada, normalmente usando JavaScript.
+
+### DOM vs. CSSOM (complemento)
+
+|                       | DOM                | CSSOM          |
+|-----------------------|--------------------|----------------|
+| Se genera a partir de | Las etiquetas HTML | Las reglas CSS |
+| Representa            | La estructura y el contenido | Los estilos (colores, tamaños, diseño) |
+
+### Ejemplo (complemento)
+
+Con este CSS:
+
+```css
+body { font-size: 16px; }
+p    { color: red; }
+span { display: none; }
+```
+
+el navegador genera un árbol de estilos como este:
+
+```text
+CSSOM
+└── body (font-size: 16px)
+    ├── p (color: red)
+    └── span (display: none)
+```
+
+### Modificar estilos con JavaScript (complemento)
+
+```js
+document.querySelector("p").style.color = "blue";
+```
+
+Con esta línea se cambia el color del párrafo mientras la página está abierta.
+
+### Dónde encaja en el proceso de renderizado
+
+El navegador construye el **DOM** y el **CSSOM** por separado. Luego los une para formar el **Render tree**.
 
 ## 21. Render tree
 
-Render Tree
-Genera un árbol juntando los objetos DOM + CSSOM.
-Pasa directamente en el navegador, el cuál interpreta toda la información.
+El **Render tree** (árbol de renderizado) es un árbol que se genera al juntar los objetos del **DOM** y del **CSSOM**.
 
+Se construye directamente en el navegador, que interpreta toda la información para saber qué elementos mostrar y con qué estilos.
+
+### Cómo se forma
+
+```text
+DOM (estructura y contenido)  ─┐
+                               ├──► Render tree
+CSSOM (estilos)               ─┘
+```
+
+### Qué incluye y qué no
+
+- Incluye solo los elementos **visibles**, cada uno con sus estilos calculados.
+- No incluye elementos que no se muestran, como `<head>`, `<script>` o los que tienen `display: none`.
+
+Ejemplo con el HTML y CSS del punto anterior:
+
+```text
+DOM:    body → p, span
+CSSOM:  p { color: red }   span { display: none }
+
+Render tree:
+body
+└── p (color: red)
+```
+
+El `span` queda fuera porque tiene `display: none`.
+
+### Dónde encaja en el proceso de renderizado
+
+```text
+DOM + CSSOM → Render tree → Layout → Paint
+```
+
+El Render tree es el paso previo al **Layout** (siguiente punto), donde se calcula la posición y el tamaño de cada elemento.
 
 ## 22. Layout
 
-Layout
-Identifica en que parte de la pantalla irá parte del proyecto.
-El navegador forma la maquetación del proyecto.
-Se genera los contenedores de información en base al render tree.
+El **Layout** (maquetación) es el paso en el que el navegador identifica en qué parte de la pantalla irá cada elemento del proyecto.
 
+El navegador forma la maquetación del proyecto: a partir del Render tree, se generan los contenedores de información (cajas) que ocupará cada elemento.
+
+### Qué calcula
+
+- La **posición** de cada elemento (dónde empieza en la pantalla).
+- El **tamaño** de cada elemento (ancho y alto).
+- Estos valores dependen del tamaño de la ventana o del dispositivo, por eso el layout se vuelve a calcular si cambiamos el tamaño de la pantalla.
+
+### Ejemplo (complemento)
+
+Con el Render tree del punto anterior:
+
+```text
+Render tree:
+body
+└── p (color: red)
+
+Layout:
+body → x: 0, y: 0, ancho: 1000 px, alto: 600 px
+└── p → x: 0, y: 0, ancho: 1000 px, alto: 20 px
+```
+
+Los valores son ilustrativos: cambian según el contenido y la pantalla.
+
+### Dónde encaja en el proceso de renderizado
+
+```text
+DOM + CSSOM → Render tree → Layout → Paint
+```
+
+El Layout define **dónde** va cada caja y **de qué tamaño**. El siguiente paso, **Paint**, se encarga de pintarlas.
 
 ## 23. Paint
 
-Paint
-Paint o pintado es poner los detalles finales para que el proyecto se pueda ver como queríamos al principio, cada contenedor es como una caja en la cual solo queda ponerle color o diseño dinámico.
-Es la parte final, así que después de esto podríamos interactuar con la página.
+El **Paint** (pintado) es el paso en el que se ponen los detalles finales para que el proyecto se vea como queríamos al principio. Cada contenedor es como una caja a la que solo le queda ponerle color o diseño dinámico.
 
+Es la parte final del proceso: después de esto ya podemos interactuar con la página.
+
+### Qué se pinta
+
+- Colores de texto y de fondo.
+- Bordes y sombras.
+- Imágenes.
+- El texto mismo, con su tipo de letra.
+
+### Ejemplo
+
+Con el Layout del punto anterior:
+
+```text
+Layout:
+body → x: 0, y: 0, ancho: 1000 px, alto: 600 px
+└── p → x: 0, y: 0, ancho: 1000 px, alto: 20 px
+
+Paint:
+body → se pinta el fondo de la página
+└── p → se pinta el texto en rojo (color: red)
+```
+
+La caja del `p` ya sabía **dónde** estaba y **de qué tamaño** era (Layout); ahora se decide **cómo se ve** (Paint).
+
+### Dónde encaja en el proceso de renderizado
+
+```text
+DOM + CSSOM → Render tree → Layout → Paint
+```
+
+Con el Paint termina el recorrido del **Critical Rendering Path**: el navegador ya muestra la página en pantalla.
 
 ## 24. JavaScript engine
 
-JS Engine es un motor que entiende al lenguaje JavaScript y puede convertirlo a Machine Code para que el navegador sepa que función se debe realizar.
+El **JavaScript engine** (motor de JavaScript) es un motor que entiende el lenguaje JavaScript y puede convertirlo a **Machine Code**, para que el navegador sepa qué función debe realizar.
 
+### Qué hace
+
+- **Lee** el código JavaScript de la página.
+- **Lo convierte** a Machine Code, el lenguaje binario que entiende la computadora (punto 2 y punto 4).
+- **Lo ejecuta**, para que las funciones se lleven a cabo en el navegador.
+
+### Ejemplo
+
+```text
+JavaScript:    document.querySelector("p").style.color = "blue";
+                         ↓
+JS Engine:     lo lee y lo convierte a Machine Code
+                         ↓
+Navegador:     cambia el color del párrafo a azul
+```
+
+### Ejemplos de motores
+
+| Navegador     | Motor          |
+|---------------|----------------|
+| Google Chrome | V8             |
+| Firefox       | SpiderMonkey   |
+| Safari        | JavaScriptCore |
+
+### Dónde encaja en el proceso de renderizado (complemento)
+
+```text
+DOM + CSSOM → Render tree → Layout → Paint
+                  ▲
+              JS Engine (ejecuta el JavaScript y puede modificar el DOM y el CSSOM)
+```
+
+El JS Engine no es un paso más de la cadena: trabaja en paralelo y puede modificar el DOM y el CSSOM, lo que obliga al navegador a repetir el Render tree, el Layout y el Paint.
 
 ## 25. Cierre del curso
 
 
+## Examen
 
+Puedes revisar y cambiar las respuestas. Al terminar, presiona **"Calificar respuestas"** para enviar las preguntas y conocer tu puntuación.
 
+1. **¿Para qué servían las tarjetas perforadas?**
+   Para almacenar información e ingresar instrucciones a una computadora.
 
+2. **¿Cómo convierte una computadora texto en unos y ceros?**
+   Las computadoras convierten texto y otros datos en binario utilizando un valor asignado de códigos como ASCII y Unicode.
 
+3. **¿Cuáles son periféricos de salida?**
+   Monitor, bocinas, audífonos e impresora.
 
-Christian Juan Tambo Coaquira
-Francisco Marcos Lombardi
-Gabriela Rincon Ramirez
+4. **¿Cuáles son periféricos de entrada?**
+   Teclado, micrófono, cámara, mouse, escáner.
 
+5. **En binario, ¿cómo se representaría el número 38?**
+   `00100110`
 
+6. **En binario, ¿cómo se representaría el string "hola"?**
+   `01101000 01101111 01101100 01100001`
 
-## Examen:
+7. **¿Cuántos bits tiene un byte?**
+   Un byte tiene 8 bits.
 
-Puedes revisar y cambiar las respuestas. Al terminar presiona “Calificar respuestas” para enviar las preguntas y conocer tu puntuación.
+8. **¿Cómo se forma un píxel?**
+   Un píxel se forma por la combinación de tonos de 3 subpíxeles: rojo, verde y azul (RGB).
 
-- 1. ¿Para qué servían las tarjetas perforadas?  
-	No es Para almacenar información en estas tarjetas que después se podía consultar.
-	Para almacenar información e ingresar instrucciones a una computadora
+9. **¿Cómo representamos el color rojo en RGB?**
+   `(255, 0, 0)`
 
+10. **¿Qué es ISP?**
+    Proveedor de servicios de internet (*Internet Service Provider*).
 
-2. ¿Cómo convierte una computadora texto en unos y ceros?  
-	Las computadoras convierten texto y otros datos en binarios utilizando un valor asignado de códigos como ASCII y Unicode.
+11. **¿Cuáles fueron las tres tecnologías que dieron nacimiento a la web como la conocemos hoy en día?**
+    HTML, URL y HTTP.
 
+12. **¿Quién creó el primer navegador?**
+    Tim Berners-Lee.
 
-3. ¿Cuáles son periféricos de salida?  
-	Monitor, bocinas, audífonos e impresora.
+13. **¿Qué significa WWW?**
+    *World Wide Web*.
 
+14. **¿Cuál es el protocolo que utilizamos para poder enviar y recibir peticiones en la web?**
+    HTTP.
 
-4. ¿Cuáles son periféricos de entrada?  
-	Teclado, micrófono, cámara, mouse, escáner.
+15. **¿Cuáles son todas las partes de un Critical Rendering Path?**
+    1. DOM
+    2. CSSOM
+    3. Render tree
+    4. JS Engine (opcional)
+    5. Layout
+    6. Paint
 
+    Referencia: [CRP: Critical Render Path o ruta de acceso de representación crítica](https://vanessamarely.medium.com/crp-critical-render-path-o-ruta-de-acceso-de-representaci%C3%B3n-cr%C3%ADtica-1f2ca78d2645)
 
-5. En binario ¿cómo se representaría el número 38?  
-	00100110
+16. **¿En qué paso del Critical Rendering Path se combinan el DOM y el CSSOM?**
+    Render tree.
 
+17. **¿En qué paso del Critical Rendering Path comenzamos a crear la estructura del proyecto sin diseño?**
+    Layout.
 
-6. En binario ¿cómo se representaría el string “hola”?  
-	01101000 01101111 01101100 01100001
-
-
-7. ¿Cuántos bits tiene un byte?  
-	Un byte tiene 8 bits.
-
-
-8. ¿Cómo se forma un pixel?  
-	Un Pixel se forma por la combinación de tonos de 3 sub-píxeles que son rojo, verde y azul (RGB).
-
-
-9. ¿Cómo representamos el color rojo en RGB?  
-	(255,0,0)
-
-
-10. ¿Qué es ISP?  
-	Proveedor de servicios de Internet (Internet Service Provider).
-
-
-11. MAL  
-	¿Cuáles fueron las tres tecnologías que dieron nacimiento a la web como la conocemos hoy en día?
-no -> HTML, CSS y JS.
-no -> HTML IP DNS
-CAMBIAR
-
-12. ¿Quién creó el primer navegador?  
-	Tim Berners-Lee
-
-
-13. ¿Qué significa WWW?  
-	World Wide Web
-
-
-14. ¿Cuál es el protocolo que utilizamos para poder enviar y recibir peticiones en la web?  
-	HTTP
-
-
-15. MAL  ¿Cuáles son todas las partes de un Critical Rendering Path?
-
-16. DOM 2. CSSOM 3. Render Tree (4. JS Engine) 5. Layout 6. Paint
-
-https://vanessamarely.medium.com/crp-critical-render-path-o-ruta-de-acceso-de-representaci%C3%B3n-cr%C3%ADtica-1f2ca78d2645
-
-17. ¿En qué paso del Critical Rendering Path, se combina el DOM y el CSSOM?  
-	Render Tree
-
-
-18. ¿En qué paso del Critical Rendering Path comenzamos a crear la estructura del proyecto sin diseño?  
-	Layout
-
-
-19. HTML y CSS son dos de los principales estándares web.  
-	Verdadero
+18. **HTML y CSS son dos de los principales estándares web.**
+    Verdadero.
